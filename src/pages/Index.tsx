@@ -14,6 +14,7 @@ import { OrganizationStructuredData } from "@/components/StructuredData";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Index = () => {
+  console.log('Index page rendering...');
   useScrollAnimation();
 
   useEffect(() => {

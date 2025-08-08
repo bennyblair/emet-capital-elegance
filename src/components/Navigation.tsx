@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import DarkModeToggle from "@/components/DarkModeToggle";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,21 +30,21 @@ const Navigation = () => {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <div className="flex items-center">
-              <a href="/" className="text-2xl font-bold text-primary hover:text-primary/80 transition-colors">
+              <Link to="/" className="text-2xl font-bold text-primary hover:text-primary/80 transition-colors">
                 Emet Capital
-              </a>
+              </Link>
             </div>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.label}
-                  href={item.href}
+                  to={item.href}
                   className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
             </div>
 
@@ -108,14 +109,14 @@ const Navigation = () => {
             <div className="md:hidden py-6 border-t border-border">
               <div className="flex flex-col space-y-4">
                 {navItems.map((item) => (
-                  <a
+                  <Link
                     key={item.label}
-                    href={item.href}
+                    to={item.href}
                     className="text-foreground hover:text-primary transition-colors duration-200 font-medium py-2 block"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 ))}
                 <div className="pt-4 space-y-3 border-t border-border">
                   <a href="tel:0485952651" className="block text-primary font-semibold text-center py-2 border border-primary/20 rounded-xl hover:bg-primary/10 transition-colors">
